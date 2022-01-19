@@ -1,16 +1,57 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
 
-import BarGraphWMark from './components/graph/barGraphWMark';
-import DonutGraph from './components/graph/donutGraph';
-import PieGraph from './components/graph/pieGraph';
+// Material Components
+import Box from '@mui/material/Box';
+
+// Local Components
+// import BarGraphWMark from './components/graph/barGraphWMark';
+// import DonutGraph from './components/graph/donutGraph';
+// import PieGraph from './components/graph/pieGraph';
+import Navigation from './components/navigation';
+import Card from './components/card';
+
+const useStyles = makeStyles(theme => ({
+  cardContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: '25px 40px',
+    
+    '& > div': {
+      width: '32%',
+      marginRight: '10px',
+      marginBottom: '10px',
+    },
+    '& > div:last-child': {
+      marginRight: 0,
+    },
+  }
+}));
 
 function App() {
-  const [changeBarData, setBarData] = useState(false);
-  const [hasMark, setMark] = useState(false);
+  const classes = useStyles();
+  // const [changeBarData, setBarData] = useState(false);
+  // const [hasMark, setMark] = useState(false);
 
   return (
     <main className="app">
-      <h1>Sample Graphs</h1>
+      <Navigation />
+      <Box className={classes.cardContainer}>
+        <Card>
+          Test 1
+        </Card>
+        <Card>
+          Test 2
+        </Card>
+        <Card>
+          Test 3
+        </Card>
+        <Card>
+          Test 4
+        </Card>
+      </Box>
+      
+      {/* <h1>Sample Graphs</h1>
       <section>
         <h1>Bar Graph</h1>
         <button onClick={() => setBarData(!changeBarData)}>Set Bar Data</button>
@@ -20,7 +61,7 @@ function App() {
         <DonutGraph />
         <h1>Pie Graph</h1>
         <PieGraph />
-      </section>
+      </section> */}
     </main>
   );
 }
