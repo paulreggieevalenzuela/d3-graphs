@@ -1,0 +1,14 @@
+@import './variables.scss';
+@import './graph.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
